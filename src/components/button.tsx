@@ -1,5 +1,6 @@
 import { Button as ButtonNativeBase, Text, IButtonProps } from 'native-base';
 
+
 interface Props extends IButtonProps {
     title: string;
     type?: 'PRIMARY' | 'SECONDARY';
