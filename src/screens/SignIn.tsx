@@ -28,4 +28,4 @@ export function SignIn() {
       </Text>
     </Center>
   )
-}
+} 
