@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 
 import Logo from '../assets/logo-copa.svg';
 
-import { Button } from '../components/button';
+import { Button } from '../components/Button';
 
 export function SignIn() {
     
