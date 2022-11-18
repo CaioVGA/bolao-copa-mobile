@@ -1,14 +1,17 @@
+import { useNavigation } from '@react-navigation/native';
 import { Row, Text, Pressable } from 'native-base';
 
 export function EmptyPoolList() {
+  const { navigate } = useNavigation();
+
   return (
     <Row flexWrap="wrap" justifyContent="center">
       <Text color="white" fontSize="sm" textAlign="center">
-        Você ainda não está participando de {'\n'} nenhum bolão, que tal
+        Você ainda não está participando de nenhum bolão,{'\n'} gostaria de
       </Text>
 
-      <Pressable>
-          <Text textDecorationLine="underline" color="yellow.500" textDecoration="underline">
+      <Pressable onPress={() => navigate('find')}>
+          <Text textDecorationLine="underline" color="red.100" textDecoration="underline">
             buscar um por código
           </Text>
       </Pressable>
@@ -17,8 +20,8 @@ export function EmptyPoolList() {
         ou
       </Text>
 
-      <Pressable>
-        <Text textDecorationLine="underline"  color="yellow.500">
+      <Pressable onPress={() => navigate('new')}>
+        <Text textDecorationLine="underline"  color="red.100">
           criar um novo
         </Text>
       </Pressable>
