@@ -12,28 +12,27 @@ export function New() {
   const toast = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handlePoolCreate() {
-    if (!title.trim()) {
-      return toast.show({
-        title: "O nome do bolão é obrigatório!",
-        placement: "top",
-        bgColor: "red.500",
-      });
-    }
-
+  async function handlePoolCreate() {  
     try {
       setIsLoading(true);
-      
-      await api.post('/pools', { title })
 
+      if (!title.trim()) {
+        return toast.show({
+          title: "O nome do bolão é obrigatório!",
+          placement: "top",
+          bgColor: "red.500",
+        });
+      }
+
+      await api.post("/pools", { title });
+      setTitle("");
+      
       return toast.show({
         title: "Bolão criado com sucesso!",
         placement: "top",
         bgColor: "green.500",
       });
-
-      setTitle('');
-
+      
     } catch (err) {
       console.log(err);
 
